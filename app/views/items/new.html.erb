@@ -1,0 +1,10 @@
+<h3>Create a new Item!</h3>
+<form action="<%= items_url %>" method="post">
+  <input type="text" name="item[title]" placeholder="Title">
+  <input type="text" name="item[body]" placeholder="Body">
+  <select name="item[status]">
+    <option value="urgent">Urgent</option>
+    <option value="non-urgent">Non-Urgent</option>
+  </select>
+  <input type="submit">
+</form>

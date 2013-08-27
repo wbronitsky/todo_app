@@ -16,4 +16,14 @@ class ItemsController < ApplicationController
       flash[:messages] << "Item not saved"
     end
   end
+
+  def show
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update_attributes(params[:item])
+    redirect_to items_url
+  end
 end

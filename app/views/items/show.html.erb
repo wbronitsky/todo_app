@@ -1,0 +1,16 @@
+<h3><%= @item.title %></h3>
+<ul>
+  <li><%= @item.body %></li>
+  <li><%= @item.status %></li>
+</ul>
+<form action="<%= item_url %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="completed">Completed?</label>
+  <input type="hidden" name="item[completed]" value="false">
+  <input type="checkbox" name="item[completed]" value="true" <%= "checked" if @item.completed %>>
+  <br>
+  <input type="submit">
+  <br>
+</form>
+
+<%= link_to "Todo List", items_url %>
